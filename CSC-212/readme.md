@@ -1,1 +1,1 @@
-This folder contains assignments, labs, and final projects done in CSC 212.
+**Data Structures and Abstractions**: Abstract data types and data structures. Pointers, linked lists, stacks, queues, binary trees, and tables. Fundamentals of software engineering. Development of object-oriented programming techniques.

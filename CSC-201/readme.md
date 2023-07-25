@@ -1,0 +1,1 @@
+**PROGRAMMING WITH DATA**: Transform data into insight using data science techniques including obtaining, analyzing, synthesizing, visualizing and presenting significant trends as well as computer characteristics, algorithms, data representation and program development.

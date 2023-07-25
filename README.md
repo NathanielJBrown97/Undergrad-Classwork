@@ -4,5 +4,7 @@ Collection of my work on labs, assignments, and projects. Within each folder you
 CSC 110: Survey of Computer Science (Introductory Course) - Python
 
 CSC 201: Programming with Data - Python
+
 CSC 211: FILL
+
 CSC 212: FILL

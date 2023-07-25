@@ -5,6 +5,6 @@ CSC 110: Survey of Computer Science (Introductory Course) - Python
 
 CSC 201: Programming with Data - Python
 
-CSC 211: FILL
+CSC 211: Computer Programming - C++
 
 CSC 212: FILL

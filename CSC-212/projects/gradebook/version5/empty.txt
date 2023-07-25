@@ -1,0 +1,5 @@
+Name Bob Bob
+Labs 22 20 12 
+Assignments 35 40 
+Projects 140 
+Exams 

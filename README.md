@@ -7,4 +7,4 @@ CSC 201: Programming with Data - Python
 
 CSC 211: Computer Programming - C++
 
-CSC 212: FILL
+CSC 212: Data Structures and Abstractions - C++

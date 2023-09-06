@@ -1,5 +1,5 @@
 # Undergrad CS Courses and Related Work
-Collection of my work on labs, assignments, and projects. Within each folder you will find the work I submitted in various courses throughout my time working on my Computer Science degree.
+This is primarily being used as a living workspace while I work on my bachelors degree in CS at the University of Rhode Island. It conatins a collection of my work on labs, assignments, and projects. Each folder represents a class - 110, 201, 211, and 212 were completed before the construction of this repository. Every class after will be updated in real time and worked out of, feel free to look around! I wanted to set this up to better visualize the growth of my own programming experience from start to finish in University. (Projects for future resume use will be within the folders - as well as their development cycle, however they will also be conducted in standalone repositories for better examination in the future, for whomever it may concern.)
 
 CSC 110: Survey of Computer Science (Introductory Course) - Python
 

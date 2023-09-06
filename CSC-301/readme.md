@@ -1,0 +1,1 @@
+Organization of programming languages, data and control structures, syntax and semantics, compilers and interpreters. Block structured languages, recursion, parameter passing, run-time storage management. Procedural, functional, object-oriented, and logical languages.

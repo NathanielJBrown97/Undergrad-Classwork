@@ -1,0 +1,1 @@
+ Logical structure of computer systems viewed as a hierarchy of levels. Assembly language programming, assemblers, linkers, loaders. Computer architecture including digital logic, processor organization, instruction sets, addressing techniques, virtual memory, microprogramming.

@@ -1,0 +1,1 @@
+Creating a Sign Up mobile app page, utilizing a firebase backend. Includes a Profile Screen in which the user uploads user data that will write to the database to store profile variables; i.e. hobbies, food, colors, name, profile photo. .json of backend database included.

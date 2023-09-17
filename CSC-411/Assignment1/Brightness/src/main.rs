@@ -1,42 +1,32 @@
-// standard library 'env' module i.e. enviorenment module. (Used for CLA access)
-use std::env;
-//use csc411_image::{GrayImage, read};
+use csc411_image::{Read, GrayImage}; //enables the 'Read and GrayImage' modules from the 411csc package.
+use std::env; //enables the standard environment package. 
 
 fn main() {
-    // Collect CLA
-    // Let is declaration - colon indicates data type of variable 'arguments'
-    // Vec<String> Vector of Strings.
-    // env::args() function call that finds CLA's as iterators - using enviorenment module.
-    // .collect() is a method helper called on the enviorenment arguments (Stores them into a collection)
-    // I.E. declares arguments variable as a vector of strings, and uses module to loop through and collect arguments in the CL.
-    //
-    // Will rewrite this to be more applicable - wanted to test.
-    let arguments: Vec<String> = env::args().collect();
 
-    //checking lenght of arguments vector
-    println!("{}", arguments.len());
+    let input = env::args().nth(1);  // variable to store CLA passed into the program. (Using env) .nth selects the position 1 argument. (filename)
+    assert!(env::args().len() == 2, "Error Message: Incorrect Number of Arguments"); // if more than 1 argument, error message.
+    //DO I NEED ADDITIONAL HALT CONDITIONS?
+    //WHAT DOES IT MEAN BY READ STANDARD INPUT, IF GRAYSCALE PROMISED, BUT NOT DELIEVERED. 
+
+
+    let img = GrayImage::read(input.as_deref()).unwrap(); //define our image as a GrayImage package structure. .as_deref will convert the string to a reference (As per requirements of Options<&str> not Option<str>) Finally unwrap will extract the image.
     
-    //prints arguments to terminal
-    println!("{:?}", arguments);
+    let h = img.height; // sets a variable to the height of our image variable.
+    let w = img.width; // sets a variable to the width of our image variable.
+    println!("{:?} has dimensions width {} and height {}", input, w, h); //prints our output. in the order of input, w, h within the string.
 
-    //// IF -- more than 1 argument -> halt w/ error message using assert()
-    // if the length is >= 2, then panic and send the error msg.
-    assert!(arguments.len() <= 2, "Error Message: More than 1 argument provided...");
+    let mut total_pixel_value = 0; // mutable total tally.
 
-    //Extract first argument
-    let cla_string = &arguments[1];
-    
-    //Print the argument
-    println!("Command Line String: {}", cla_string);
+    for y_height in 0..img.height {
+        let current_y = y_height;
+        for x_width in 0..img.width{
+            let current_x = x_width;
 
-    // Part A of A1 PDF:
-    // - Wait for Lab to be posted; do lab, then continue.
+            // CREATE A CURRENT PIXEL VALUE = X/Y VALUE, ADD IT TO TOTAL. REPEAT.
+            //println!("Current Pixel: ({},{})", current_x, current_y);
+        }
+    }
 
-    // Sets input variable to the enviorenment package arguments variable, specifically the 'Nth' member variable passed 1.
-    //let input = env::arguments().nth(1);
-
-    // Sets image variable to grayImage package, using read member function passed the abovedefined 'input'.
-    // GrayImage section - is an 'option type' - Type that has two possible values, what is in the brackets (GrayImage), the other value is none.
-    // Unwrap will check if the above is a gray image, if it is good. IF NOT - panic. 
-    //let image = GrayImage::read(input.as_deref()).unwrap();
+    //TAKE TOTAL PIXEL VALUE, RUN CALCULATION TO DETERMINE BRIGHTNESS AND NORMALIZE IT TO 0-1 RANGE.
 }
+

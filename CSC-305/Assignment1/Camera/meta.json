@@ -21,8 +21,8 @@
                     "createdAt": "2023-09-08T19:04:13.660Z",
                     "updatedAt": "2023-09-08T19:04:13.660Z",
                     "__v": 0,
-                    "signedUrl": "https://storage.googleapis.com/thunkable-x-production/users/64f9cf9d9e1206a4a002d15f/projects/64fb665666b9fc010193e85f/assets/64fb702d50f41243d74ab05e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=thunkable-ios%40thunkable-ios.iam.gserviceaccount.com%2F20230917%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230917T192208Z&X-Goog-Expires=172800&X-Goog-SignedHeaders=host&X-Goog-Signature=8796dcca32fddcce42b95e6e81b049c2a2e102913a50f428a95585259a18c51df1141719cb7718d8d8c0f5717165afe4d3efec5e10b7fba770235d7264dbad595e03a22a8e2ee85c8abaa4e5f74076aace0fcbd5e39ef30cc6091b64ea16d1370be390c15e309a314061a838cb9c31f5e418affdfc6844fa5e63ed492ca15f221e672ef83c973df4ef73f4af9542aedbf45c72f29f2698c0ec0daa97393caa857d216410c1dde079ef41e645122513c37cf58a1232d4157cb42cfb9acc96eeff64e983ca5e18d4162bf68ad830ee5d4b2ace693bf9614afce6e348fdab1123517b7e276afc04e0b6d74fdfcd006880da6fbb15f0c3e8d92caafebdda4c4734b9",
-                    "signedUrlExpirationTime": 1695151328156
+                    "signedUrl": "https://storage.googleapis.com/thunkable-x-production/users/64f9cf9d9e1206a4a002d15f/projects/64fb665666b9fc010193e85f/assets/64fb702d50f41243d74ab05e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=thunkable-ios%40thunkable-ios.iam.gserviceaccount.com%2F20230917%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230917T192410Z&X-Goog-Expires=172800&X-Goog-SignedHeaders=host&X-Goog-Signature=1b510394a6d171032714107b184a95d1b762b9bbd2ee2df700f00f169f72f0d163f052ce54695772c64ad128c9ca72759d65a1aa371fc5dfd2b3827d0b0f642485578040597144d78fd2f87372b3bc49456db36d284f1cade9b93102d828e5ec22486063e491e0d9845cdb4558d95107a0eeb57704fc4c0a59bcddb7df856111da1561c905e309fee97d7e7897b4fffea971adca59ff5b2dc6698a9a79916c573b6a2e68443f797ef22fe6f084734e15d3e05903f23032297e595fa3e9b22f74e2ba11ef377942330792363dd2193a4b0888457fd2c91ce154a0fb2bc49c3a258f2711d4c174c4a6815d1c46520188b3abd8580f50c1029bc4e202436b02bbcc",
+                    "signedUrlExpirationTime": 1695151450137
                 }
             },
             "backendUpgradeVersion": 21,
@@ -76,7 +76,7 @@
             "figmaComponents": {},
             "description": null,
             "icon": null,
-            "projectName": "A1_Camera",
+            "projectName": "A2_Camera_devPerspective",
             "settings": {
                 "teamId": null,
                 "appName": null,
@@ -109,8 +109,7 @@
                 "permissions": {
                     "ios": {
                         "usageDescriptions": {
-                            "NSCameraUsageDescription": "",
-                            "NSMicrophoneUsageDescription": ""
+                            "NSCameraUsageDescription": ""
                         }
                     }
                 },
@@ -158,8 +157,7 @@
                 "permissions": {
                     "ios": {
                         "usageDescriptions": {
-                            "NSCameraUsageDescription": "",
-                            "NSMicrophoneUsageDescription": ""
+                            "NSCameraUsageDescription": ""
                         }
                     }
                 },
@@ -184,10 +182,21 @@
             "customProperties": [],
             "modules": [],
             "usesDragDropUi": true,
-            "totalCopy": "1",
+            "totalCopy": "0",
             "totalStar": "0",
             "starAction": "star",
-            "variables": {},
+            "variables": {
+                "ef557fa1-3f7e-4365-b60e-127decb24939": {
+                    "scope": "APP",
+                    "name": "AudioBool",
+                    "screenId": "8424d89a-e6bd-4c60-8d17-2423a365bed9"
+                },
+                "80a3d9b4-892b-4870-9b0a-3d41140be014": {
+                    "scope": "APP",
+                    "name": "AudioBool",
+                    "screenId": "e014d37f-d6fd-4d91-9006-3b949e3cc9fd"
+                }
+            },
             "defaultDesignerDevice": "PHONE",
             "defaultDesignerOrientation": "PORTRAIT",
             "schemaVersion": 2,

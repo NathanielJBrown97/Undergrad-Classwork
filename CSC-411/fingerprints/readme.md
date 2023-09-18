@@ -1,3 +1,5 @@
+Part B of Assignment 1.
+
 In this problem you are to write a program fgroups (short for “fingerprint
 groups”), which when given a set of names with fingerprints will identify groups
 of names that share a fingerprint. The real object of the exercise is to familiarize

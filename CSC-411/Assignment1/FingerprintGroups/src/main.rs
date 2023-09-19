@@ -1,21 +1,21 @@
 use std::collections::HashMap;
 use std::io;
-
+// fn ws(c: char) -> bool {
+//     return c == ' ' || c == '\t'
+// }
 fn main() {
     // Create a mutable HashMap to store fingerprint and name pairs
-    let mut hashmap_data: HashMap<String, String> = HashMap::new();
+    // _ , _ - type inference. As long as consisten, this way dont need to define which types.
+    let mut hashmap_data: HashMap<String , Vec<String>> = HashMap::new(); //types were reference in class?
 
-    let mut goober_solution = 0;
-    while goober_solution < 4 {
+
+    for line in io::stdin().lines() {
         // Create a mutable String to store user input
-        let mut current_input = String::new();
-        
+        let current_input = line.unwrap(); 
+
 //TODO: Figure out how to properly take the input during help hours.
         // Read user current_input from the standard current_input (keyboard)
         println!("Input a Fingerprint followed by a name:");
-        if io::stdin().read_line(&mut current_input).is_err() {
-            break; 
-        }
 
         // Split and collect the input by whitespace, push those values into the vector of strings
         let parts_of_input: Vec<&str> = current_input.trim().split_whitespace().collect();
@@ -28,27 +28,45 @@ fn main() {
             // store ALL elements from the 1st element till the end of the vector, seperated by whitespaces as the name.
             let name = parts_of_input[1..].join(" ").to_string();
 
-            // insert a clone of these two values into the hashmap. Key(Fingerprint):Value(Name)
-            hashmap_data.insert(fingerprint.clone(), name.clone());
-
-//FOR TESTING PURPOSES - DELETE LATER
-            println!("Fingerprint: {}", fingerprint);
-            println!("Name: {}", name);
-        } else {
-//FOR TESTING PURPOSES - DELETE LATER
-            println!("Invalid input. Please provide both a fingerprint and a name separated by a space.");
-        }
-        goober_solution += 1;
+            match hashmap_data.get_mut(&fingerprint) {
+                //if key exists; add to the value vector of strings.
+                Some (current_name) => {
+                    current_name.push(name);
+                }
+                None => { hashmap_data.insert(fingerprint, vec![name]);}
+            }
+        } 
+    }
+//PRINT TO CHECK
+    for (fgroup, names) in &hashmap_data {
+        println!("fgroup: {}, Names: {:?}", fgroup, names);
     }
 
-//FOR TESTING PURPOSES - DELETE LATER
-    // prints all key:vals within the hashmap
-    println!("Data in the HashMap:");
-    for (fingerprint, name) in &hashmap_data {
-        println!("Fingerprint: {}, Name: {}", fingerprint, name);
-    }
+       
+// for key in hmap.keys()
+    // for name in hmap.get_mut(key)
 
-//TODO: IMPLEMENT GOOD DATA SORT
+}
+
+
+
+
+
+// //TODO: IMPLEMENT GOOD DATA SORT
+//     //initialize a vector of vector of strings. (Store the groups after HM processing)
+//     let mut vector_of_fgroups: Vec<Vec<String>> = Vec::new();
+//     //initialize a vector of 
+//     let mut vector_of_visited_keys: Vec<String> = Vec::new();
+// //ASK - is this iteration   
+//     //start iteration through the hashmap
+//     for(fingerprint, name) in &hashmap_data {
+//         if !vector_of_visited_keys.contains(&fingerprint){
+//             //push the unique fingerprint into visited. 
+// //ASK - do I not need to copy the data?
+//             vector_of_visited_keys.push(fingerprint.to_string());
+//         }
+
+
     //Start from top down? 
         //Take first Key - iterate through keys to look for matching keys?
             // if only associated with 1 value
@@ -71,4 +89,29 @@ fn main() {
 //ASK
     //if multiple fingerprint groups:
         //print each group, seperate them by newlines? - same as above; confirm specifications.
-}
+
+
+
+
+    // CLASS EXAMPLE -- taking input
+
+    // for line in io::stdin().lines() {
+    //     let l = line.unwrap(); // changes line into words
+    //     let words: Vec<&str> = l.split(ws).collect();
+    //     // For every word seen so far, counter contains, associated with that word, an integer value indicating the number of occurences of that word so far.
+    //     for word in words {
+    //         match hashmap_data.get_mut(word) {
+    //             Some(c) => {
+    //                 *c += 1;
+    //             }
+    //             None => { hashmap_data.insert((&word).to_string(), 1_u64); }
+    //         }
+    //     }
+    // }
+
+//     //filter sets conditions for collecting. Collects two touples.
+//     let mut multiwords: Vec<_> = hashmap_data.intro_iter().filter(|(_, v)| *v > 1).collect();
+//     multiwords.sort_by_key(|k| k.1);
+//     multiwords.iter().foreach(|(k,v)| println!("{k}\t{v}"));
+// } //delete this when re-enabling your code later.
+

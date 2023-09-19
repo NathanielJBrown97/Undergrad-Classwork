@@ -5,7 +5,8 @@ fn main() {
     // Create a mutable HashMap to store fingerprint and name pairs
     let mut hashmap_data: HashMap<String, String> = HashMap::new();
 
-    loop {
+    let mut goober_solution = 0;
+    while goober_solution < 4 {
         // Create a mutable String to store user input
         let mut current_input = String::new();
         
@@ -37,11 +38,37 @@ fn main() {
 //FOR TESTING PURPOSES - DELETE LATER
             println!("Invalid input. Please provide both a fingerprint and a name separated by a space.");
         }
+        goober_solution += 1;
     }
 
-    // Print the contents of the HashMap after the loop.
+//FOR TESTING PURPOSES - DELETE LATER
+    // prints all key:vals within the hashmap
     println!("Data in the HashMap:");
     for (fingerprint, name) in &hashmap_data {
         println!("Fingerprint: {}, Name: {}", fingerprint, name);
     }
+
+//TODO: IMPLEMENT GOOD DATA SORT
+    //Start from top down? 
+        //Take first Key - iterate through keys to look for matching keys?
+            // if only associated with 1 value
+                // ignore it and move on
+            // if key is associated with multiple values...
+                // this is a FINGERPRINT GROUP
+//ASK 
+                    // Do I store these groups as a vector of strings(names) WTIHIN a vector?
+        // Repeat, but with NEXT UNIQUE KEY
+//ASK
+            //How should I handle this? Perhaps with a vector tracking 'visited' locations? Look into other methods within rust.
+            //Repeat above; push into the Vec<Vec<strings>>
+
+// Start Output According to Instructions:
+    //if vec<vec<strings> is empty:
+        //prints nothing and ends
+    //if just 1 fingerprint group:
+//ASK
+        //print the group; how exactly? one entry per line? - Confirm with TAs for autograder
+//ASK
+    //if multiple fingerprint groups:
+        //print each group, seperate them by newlines? - same as above; confirm specifications.
 }

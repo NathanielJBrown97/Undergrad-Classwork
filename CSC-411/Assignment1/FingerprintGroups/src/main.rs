@@ -15,7 +15,7 @@ fn main() {
 
 //TODO: Figure out how to properly take the input during help hours.
         // Read user current_input from the standard current_input (keyboard)
-        println!("Input a Fingerprint followed by a name:");
+//        println!("Input a Fingerprint followed by a name:");
 
         // Split and collect the input by whitespace, push those values into the vector of strings
         let parts_of_input: Vec<&str> = current_input.trim().split_whitespace().collect();
@@ -37,14 +37,52 @@ fn main() {
             }
         } 
     }
-//PRINT TO CHECK
-    for (fgroup, names) in &hashmap_data {
-        println!("fgroup: {}, Names: {:?}", fgroup, names);
+
+    //PRINTS ALL ALL VALUES SEPERATED BY GROUP\
+    //iterate through the fingerprints
+    let mut remaining_fingerprints = hashmap_data.len(); // SOLUTION?
+
+    for fingerprints in hashmap_data.keys() {
+        // Access the associated values using get
+        if let Some(values) = hashmap_data.get(fingerprints) {
+            if hashmap_data.len() > 1 {
+                for name in values {
+                    println!("{}", name);
+                }
+            }
+        }
+        remaining_fingerprints -= 1; // finished one of our groups, decrement.
+        if remaining_fingerprints != 0 {
+            // newline inbetween fgroups
+            println!();
+        }
     }
 
-       
+//PRINT TO CHECK - delete later
+    // for (fgroup, names) in &hashmap_data {
+    //     println!("fgroup: {}, Names: {:?}", fgroup, names);
+    // }
+
+    // for fingerprints in hashmap_data.keys(){
+    //     for name in hashmap_data.get_mut(fingerprints){
+            
+    //     }
+    // }
+
+       //to facilitate ordered print of hashmap
 // for key in hmap.keys()
     // for name in hmap.get_mut(key)
+
+// Start Output According to Instructions:
+    //if vec<vec<strings> is empty:
+        //prints nothing and ends
+    //if just 1 fingerprint group:
+//ASK
+        //print the group; how exactly? one entry per line? - Confirm with TAs for autograder
+//ASK
+    //if multiple fingerprint groups:
+        //print each group, seperate them by newlines? - same as above; confirm specifications.
+
 
 }
 
@@ -80,15 +118,6 @@ fn main() {
             //How should I handle this? Perhaps with a vector tracking 'visited' locations? Look into other methods within rust.
             //Repeat above; push into the Vec<Vec<strings>>
 
-// Start Output According to Instructions:
-    //if vec<vec<strings> is empty:
-        //prints nothing and ends
-    //if just 1 fingerprint group:
-//ASK
-        //print the group; how exactly? one entry per line? - Confirm with TAs for autograder
-//ASK
-    //if multiple fingerprint groups:
-        //print each group, seperate them by newlines? - same as above; confirm specifications.
 
 
 

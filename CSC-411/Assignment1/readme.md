@@ -14,7 +14,8 @@
 **Correct implementation and what is not:**  
 For Brightness: Everything was fully implemented. We wrote error checking conditionals for incorrect arguments, and checked whether the promised file was of type Gray, not RGB or other types.  
   
-For Fingerprint Groups: Mostly everything was implemented. We implemented a feature that will read a line; taking the first sequence of characters as a key that we called fingerprint, and all other characters after the first whitespace as a value we called name. This was the first step of implementing the entire assignment. From here we then implemented some logic that... **CONTINUE HERE**  
+For Fingerprint Groups: Mostly everything was implemented. We implemented a feature that will read a line; taking the first sequence of characters as a key that we called fingerprint, and all other characters after the first whitespace as a value we called name. This was the first step of implementing the entire assignment. From here we then implemented some logic using rusts 'match' that checks if there is already a key in the hashmap with the current fingerprint identifier. If so, it pushes the name into that key's association. If the key wasn't found, then it simply inserts the key:value (fingerprint:name) into the hashmap.  
+
   
 
 **PART C:** Problems you can solve using a working version of fgroups **:PART C**  

@@ -1,7 +1,7 @@
 **Rust Assignment 1: Readme Document**  
 **Programming Partners:** Nathaniel Brown, Jake Dansereau  
 
-**Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x3), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  
+**Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x4), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  
 
 **__Vincent__** - Extremely helpful with clarification of some of the objectives of the assignment that caused confusion, as well as explaining core concepts of rust that are similar, but yet different from rust. As well as providing some supplementary background information on hashmaps in general that my group was rather weak with fully understanding before this assignment.  
 
@@ -11,6 +11,10 @@
 
 **__Ayman__** - Extremely helpful with helping guide me towards better ways to troubleshoot my code when grade scope does not provide test cases that get me to the finish line. Instead; he proposed methodologies that could be used to find those issues on my own. (Which immediately lead to the detection of a major flaw in an earlier version of my program.)  
   
+**Correct implementation and what is not:**  
+For Brightness: Everything was fully implemented. We wrote error checking conditionals for incorrect arguments, and checked whether the promised file was of type Gray, not RGB or other types.  
+  
+For Fingerprint Groups: Mostly everything was implemented. We implemented a feature that will read a line; taking the first sequence of characters as a key that we called fingerprint, and all other characters after the first whitespace as a value we called name. This was the first step of implementing the entire assignment. From here we then implemented some logic that... **CONTINUE HERE**
 **PART C:** Problems you can solve using a working version of fgroups **:PART C**  
    
 **1.)** Support Tickets; suppose a fictitious company has a support department where customers are able to submit tickets for support from the company. Naturally some issues will have greater importance than others. If tickets were submitted with a 'Priority' label indiciating whether it is High, Medium, or Low urgency. Followed by an 'Issue Identifier' which could be selected or filled out from the user. You would effectively sort your issues into a hashmap containing keys (the level of urgency) and values (issues within each urgency group). This could easily be implemented with the fgroups program; although it could be expanded by changing our names:values to an object that contains more prevelant member variables and information to the Issue submitted in this fictitious company.  

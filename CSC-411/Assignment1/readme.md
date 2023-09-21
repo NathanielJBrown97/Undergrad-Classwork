@@ -2,9 +2,13 @@
 **Programming Partners:** Nathaniel Brown, Jake Dansereau  
 
 **Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x3), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  
+
 **__Vincent__** - Extremely helpful with clarification of some of the objectives of the assignment that caused confusion, as well as explaining core concepts of rust that are similar, but yet different from rust. As well as providing some supplementary background information on hashmaps in general that my group was rather weak with fully understanding before this assignment.  
-**__Nicholas__** - Extremely helpful with instructing me how to properly look through the documentation of Rust, but more in particular the documentation of the 411csc_image module. Helped clarify things relating to the Gray type that was contained within the pixels vector, that caused a major barrier to the brightness assignment. Also provided some background information on error handling with the options system related to rust.
+
+**__Nicholas__** - Extremely helpful with instructing me how to properly look through the documentation of Rust, but more in particular the documentation of the 411csc_image module. Helped clarify things relating to the Gray type that was contained within the pixels vector, that caused a major barrier to the brightness assignment. Also provided some background information on error handling with the options system related to rust.  
+
 **__Emily__** - Extremely helpful with providing supplementary information in the form of a mini-lecture with my group and other members of the 411 class in the Tyler lonuge. Helped provide a much better understanding of result, in particular options (some/none).  
+
 **__Ayman__** - Extremely helpful with helping guide me towards better ways to troubleshoot my code when grade scope does not provide test cases that get me to the finish line. Instead; he proposed methodologies that could be used to find those issues on my own. (Which immediately lead to the detection of a major flaw in an earlier version of my program.)  
   
 Problems you can solve using a working version of fgroups:  

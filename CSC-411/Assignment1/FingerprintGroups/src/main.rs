@@ -1,75 +1,84 @@
 use std::collections::HashMap;
-use std::io;
+use std::io::{self, BufRead};
 
 fn main() {
-    // Create a mutable HashMap to store fingerprint and name pairs
-    // _ , _ - type inference. As long as consisten, this way dont need to define which types.
-    let mut hashmap_data: HashMap<String , Vec<String>> = HashMap::new(); //types were reference in class?
+    let mut hashmap_data: HashMap<String, Vec<String>> = HashMap::new(); //Man Variant; hashmap containing key: of type string and value of type vec of strings.
 
+    //read lines from standard input, lock it to standard input.
+    for line in io::stdin().lock().lines() {
+        //Try to read current line
+        let current_input = match line {
+            Ok(line) => line, //if read, store in line
+            Err(_) => { //if not read, print error reading line
+                eprintln!("ERROR: Cannot line read input");
+                continue;
+            }
+        };
 
-    for line in io::stdin().lines() {
-        // Create a mutable String to store user input
-        let current_input = line.unwrap(); 
-
-        // Split and collect the input by whitespace, push those values into the vector of strings
+        //split the current input by whitespace and store them in vec of strings 
         let parts_of_input: Vec<&str> = current_input.trim().split_whitespace().collect();
 
-        // Check if there are at least two parts within the vector (fingerprint and name)
+        
+        //If more than 2 parts of input
         if parts_of_input.len() >= 2 {
-            // Store the first part in the vector as the fingerprint.
             let fingerprint = parts_of_input[0].to_string();
+            let name = parts_of_input[1..].join(" ").to_string(); //join all parts after the first including whitespace
 
-            // store ALL elements from the 1st element till the end of the vector, seperated by whitespaces as the name.
-            let name = parts_of_input[1..].join(" ").to_string();
+            //if group length exceeds 512 stderr
+            if fingerprint.len() > 512 {
+                // Fingerprint is too long, write an error message to stderr and continue.
+                eprintln!("ERROR: Fingerprint exceeds 512 characters --> {}", fingerprint);
+                continue;
+            }
 
+            //if name length exceeds maximum usize
+            if name.len() > usize::MAX {
+                // Name is too long, write an error message to stderr and continue.
+                eprintln!("ERROR: Name is too long!");
+                continue;
+            }
+
+            // check if the fingerprint is within the map
             match hashmap_data.get_mut(&fingerprint) {
-                //if key exists; add to the value vector of strings.
-                Some (current_name) => {
+                Some(current_name) => {
+                    //if it exists, push the name into the associated key within the map
                     current_name.push(name);
                 }
-                None => { hashmap_data.insert(fingerprint, vec![name]);}
+                None => {
+                    //if no match is found, add the whole key:value pair.
+                    hashmap_data.insert(fingerprint, vec![name]);
+                }
             }
-        } 
+        } else {
+            // If none of this happens; the input must be terrible
+            eprintln!("ERROR: Badly formed input line --> {}", current_input);
+        }
     }
 
-    let mut remaining_fingerprints = hashmap_data.len(); // SOLUTION?
+    let mut remaining_fingerprints = hashmap_data.len(); // Goober Solutions; represents length of hashmap.
+
     // Iterate over the entries in the HashMap
     for (fingerprints, name) in &hashmap_data {
-        // Check if the vector associated with the key has more than 1 element
-        if name.len() > 1 {
+        //Handles first fgroup post; so that new lines are added properly.
+        // If remaining fingerprints is equal to the length of our hashmap --- NO NEW LINE; print first group.
+        if (remaining_fingerprints == hashmap_data.len()) && (name.len() > 1){
+            remaining_fingerprints -= 1; //decrement remaining
             if let Some(values) = hashmap_data.get(fingerprints){
                 for name in values{
                     println!("{}", name);
                 }
             }
         }
-        remaining_fingerprints -= 1; // finished one of our groups, decrement.
-        if remaining_fingerprints != 0 {
-    // newline inbetween fgroups
-            println!();
-         }
-
-    
+        // if the vector of names has more than 1 entry        
+        else if name.len() > 1 {
+            println!(); //print new line 
+            //iterate through the names printing them.
+            if let Some(values) = hashmap_data.get(fingerprints){
+                for name in values{
+                    println!("{}", name);
+                }
+            }
+        }
     }
 }
 
-    // //PRINTS ALL ALL VALUES SEPERATED BY GROUP
-    // //iterate through the fingerprints
-    // let mut remaining_fingerprints = hashmap_data.len(); // SOLUTION?
-
-    // for fingerprints in hashmap_data.keys() {
-    //     // Access the associated values using get
-    //     if let Some(values) = hashmap_data.get(fingerprints) {
-    //         if hashmap_data.len() > 1 {
-    //             for name in values {
-    //                 println!("{}", name);
-    //             }
-    //         }
-    //     }
-    //     remaining_fingerprints -= 1; // finished one of our groups, decrement.
-    //     if remaining_fingerprints != 0 {
-    //         // newline inbetween fgroups
-    //         println!();
-    //     }
-    // }
-//}

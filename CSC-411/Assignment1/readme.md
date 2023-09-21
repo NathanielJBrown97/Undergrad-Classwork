@@ -1,15 +1,18 @@
 **Rust Assignment 1: Readme Document**  
 **Programming Partners:** Nathaniel Brown, Jake Dansereau  
 
-**Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x4), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  
+**Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x5), Nicholas(x2), Emily Light(x2), Ayman Sandouk(x3), and Daniel Diaz(x2).  
 
 **__Vincent__** - Extremely helpful with clarification of some of the objectives of the assignment that caused confusion, as well as explaining core concepts of rust that are similar, but yet different from rust. As well as providing some supplementary background information on hashmaps in general that my group was rather weak with fully understanding before this assignment.  
 
-**__Nicholas__** - Extremely helpful with instructing me how to properly look through the documentation of Rust, but more in particular the documentation of the 411csc_image module. Helped clarify things relating to the Gray type that was contained within the pixels vector, that caused a major barrier to the brightness assignment. Also provided some background information on error handling with the options system related to rust.  
+**__Nicholas__** - Extremely helpful with instructing me how to properly look through the documentation of Rust, but more in particular the documentation of the 411csc_image module. Helped clarify things relating to the Gray type that was contained within the pixels vector, that caused a major barrier to the brightness assignment. Also provided some background information on error handling with the options system related to rust. Lastly, he provided some more insight into the read trait and the std error check it handled. He also helped with the .expect() feature in Rust for outputting your own error message that uses stderr.  
 
 **__Emily__** - Extremely helpful with providing supplementary information in the form of a mini-lecture with my group and other members of the 411 class in the Tyler lonuge. Helped provide a much better understanding of result, in particular options (some/none).  
 
-**__Ayman__** - Extremely helpful with helping guide me towards better ways to troubleshoot my code when grade scope does not provide test cases that get me to the finish line. Instead; he proposed methodologies that could be used to find those issues on my own. (Which immediately lead to the detection of a major flaw in an earlier version of my program.) Suggestions to review pdf and identify literal specifications, helped identify data validation methods that were the root of the actual problem.
+**__Ayman__** - Extremely helpful with helping guide me towards better ways to troubleshoot my code when grade scope does not provide test cases that get me to the finish line. Instead; he proposed methodologies that could be used to find those issues on my own. (Which immediately lead to the detection of a major flaw in an earlier version of my program.) Suggestions to review pdf and identify literal specifications, helped identify data validation methods that were the root of the actual problem.  Also helpful with explaining options (some/none) and how error handling is handled through that.  
+
+**__Daniel__** - Extremely helpful with some last minute clarifications and thorough explanations of what is happening with an assert call; as well as help understanding the CAT input feed for files. Helped us confirm what was needed for error handling.  
+
   
 **Correctly implementation:**  
 For Brightness: Everything was fully implemented. Using the assert method we check if the argument count is less than 2, if so it produces stderr message. When reading the GrayImage, if a gray image type was promised but not recieved a stderr occurs.
@@ -28,7 +31,8 @@ As far as we're aware this fully implements all specifications of the project. T
   
 **2.)** Library Management; perhaps a library wishes to actually know what inventory they have. Rather than just have a giant disorganized collection of all books within their collection. You can have books sorted by Genres, which would be our keys, and Books, which would be our values. After reading a giant file containing all of the books and associating them with a genre identifier. The library would now have access to every book in their collection, organized by genre. This would easily be implemented using the fgroups program as it stands currently; again it could be expanded though. Perhaps by expanding the program to include a basic user interface, in which the user could search for a specific book and have returned the genre it's categorized under.  
   
-**3.)** 
+**3.)** Retail Store: If a retail clothing store wanted to take stock of their current inventory, they could use fgroups to better organize their stock. For example, they could sort their inventory by articles of clothing, such as hats, shirts, pants, and shoes.  Each specific article of clothing, such as the different kinds of hats, and different shoes, would be the values.  With a database/collection of the inventory for each different article of clothing type and the different types within each, we can use fgroups to sort the inventory by article of clothing.  Like the library management example, we could also add a user interface to allow users to sort which clothes they want to see by article of clothing.  
   
-**Approximate Time Spent on Assignment:** Around 20-25 hours. (Entirely new language; catching up on weak knowledge of hashmaps. I also burned a lot of time trying to start the assignment, before the lab was out. After the lab and related lecture the following week, everything started to click.) Depressingly; that averages out to 1 line per hour roughly. 
+
+**Approximate Time Spent on Assignment:** Around 20-25 hours. (Entirely new language; catching up on weak knowledge of hashmaps. I also burned a lot of time trying to start the assignment, before the lab was out. After the lab and related lecture the following week, everything started to click.) Depressingly; that averages out to roughly 1 line per hour. 
 

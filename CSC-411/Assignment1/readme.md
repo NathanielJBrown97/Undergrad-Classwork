@@ -1,1 +1,3 @@
-Rust Assignment 1 Repository.
+Rust Assignment 1 Readme.md  PART C
+Nathaniel Brown
+9/21/2023

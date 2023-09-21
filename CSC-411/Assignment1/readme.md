@@ -18,7 +18,7 @@ For Fingerprint Groups: Mostly everything was implemented. We implemented a feat
 We also implemented data validation according to the instructions. If parts of the name were larger than two, we simply take the whole string as a name. If the group (fingerprint) exceeded 512 characters, we print an error to stderr. Similarily, if the name exceeds the maximum usize, we print an error to stderr. If the input was not able to be processed after all of these checks, the line was marked as a badly formed line and printed to stderr. All checks except for truncation were covered in our version of this assignment.  
 
   
-**What was not fully implemented: **  
+**What was not fully implemented:**  
 As far as we're aware this fully implements all specifications of the project. The only exclusion would be the truncating of names larger than 512; we opted to simply not handle them as suggested within the instructions.  
 
   

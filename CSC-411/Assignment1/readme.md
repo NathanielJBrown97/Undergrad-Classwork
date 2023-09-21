@@ -14,7 +14,9 @@
 **Correct implementation and what is not:**  
 For Brightness: Everything was fully implemented. We wrote error checking conditionals for incorrect arguments, and checked whether the promised file was of type Gray, not RGB or other types.  
   
-For Fingerprint Groups: Mostly everything was implemented. We implemented a feature that will read a line; taking the first sequence of characters as a key that we called fingerprint, and all other characters after the first whitespace as a value we called name. This was the first step of implementing the entire assignment. From here we then implemented some logic that... **CONTINUE HERE**
+For Fingerprint Groups: Mostly everything was implemented. We implemented a feature that will read a line; taking the first sequence of characters as a key that we called fingerprint, and all other characters after the first whitespace as a value we called name. This was the first step of implementing the entire assignment. From here we then implemented some logic that... **CONTINUE HERE**  
+  
+
 **PART C:** Problems you can solve using a working version of fgroups **:PART C**  
    
 **1.)** Support Tickets; suppose a fictitious company has a support department where customers are able to submit tickets for support from the company. Naturally some issues will have greater importance than others. If tickets were submitted with a 'Priority' label indiciating whether it is High, Medium, or Low urgency. Followed by an 'Issue Identifier' which could be selected or filled out from the user. You would effectively sort your issues into a hashmap containing keys (the level of urgency) and values (issues within each urgency group). This could easily be implemented with the fgroups program; although it could be expanded by changing our names:values to an object that contains more prevelant member variables and information to the Issue submitted in this fictitious company.  

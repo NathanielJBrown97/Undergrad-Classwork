@@ -1,4 +1,4 @@
-**Rust Assignment 1 Readme.md  PART C**  
+**Rust Assignment 1: Readme Document**  
 **Programming Partners:** Nathaniel Brown, Jake Dansereau  
 
 **Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x3), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  

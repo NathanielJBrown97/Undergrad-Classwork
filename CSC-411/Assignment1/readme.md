@@ -28,5 +28,5 @@ For Fingerprint Groups: We failed to pass the 'Large Input' section of gradescop
   
 **3.)** 
   
-**Approximate Time Spent on Assignment:** Around 20-25 hours. (Entirely new language; catching up on weak knowledge of hashmaps.)  
+**Approximate Time Spent on Assignment:** Around 20-25 hours. (Entirely new language; catching up on weak knowledge of hashmaps. I also burned a lot of time trying to start the assignment, before the lab was out. After the lab and related lecture the following week, everything started to click.) Depressingly; that averages out to 1 line per hour roughly. 
 

@@ -1,5 +1,6 @@
 **Rust Assignment 1 Readme.md  PART C**  
 **Programming Partners:** Nathaniel Brown, Jake Dansereau  
+
 **Acknowledgement of Help:** Outside of working through particular problems with syntax and familarizing ourselves with a new language amongst the group partners; the majority of our outside help came from Teaching Assistants. In particular; Vincent Zhuang(x3), Nicholas(x1), Emily Light(x1), and Ayman Sandouk(x1).  
 **__Vincent__** - Extremely helpful with clarification of some of the objectives of the assignment that caused confusion, as well as explaining core concepts of rust that are similar, but yet different from rust. As well as providing some supplementary background information on hashmaps in general that my group was rather weak with fully understanding before this assignment.  
 **__Nicholas__** - Extremely helpful with instructing me how to properly look through the documentation of Rust, but more in particular the documentation of the 411csc_image module. Helped clarify things relating to the Gray type that was contained within the pixels vector, that caused a major barrier to the brightness assignment. Also provided some background information on error handling with the options system related to rust.

@@ -1,0 +1,50 @@
+#Nathaniel Brown - CSC 301 - Assignment 3
+load system io.
+
+
+#Problem 1:
+
+
+function square
+    with [] do
+        []
+    with [h | t] do
+        [h*h] + square(t).
+end
+io@print("The output of Square with [1,2,3] using the new recursive multi-dispatch function is... " + tostring(square([1,2,3])) + "\n").
+io@print("The output of Square with [0,-1, -2] using the new recursive  multi-dispatch  function is... " + tostring(square([0,-1,-2])) + "\n").
+
+
+-- #Problem 2:  ASK IF ASSERT IS NEEDED
+
+
+function member 
+    with ([], m) do 
+        false.
+    with ([h | t], m) do
+ --   <value-if-true> if <test> 
+ --                   else <value-if-false>       
+        true if h == m #return - followed by if expression    
+        else member(t , m) #else - run given expression
+end
+io@print("The output of Member with [1,2,3] when searching for 2 is " + tostring(member([1,2,3], 2)) +"\n").
+io@print("The output of Member with [1,2,3] when searching for 5 is " + tostring(member([1,2,3], 5)) +"\n").
+
+
+-- # Problem 3 (Extra Credit)
+
+
+function addList
+    with [] do
+        0
+    with [h | t] do
+        h + addList(t)
+end
+function listLength
+    with [] do
+        0
+    with [h | t] do
+        1 + listLength(t)
+end
+io@print("The average of the list [1,2,3] is " + tostring(addList([1,2,3]) / listLength([1,2,3])) + "\n").
+io@print("The average of the list [2,4,6] is " + tostring(addList([2,4,6]) / listLength([2,4,6])) + "\n").

@@ -1,0 +1,1 @@
+In this assignment we developed the front end to a website, styled it using CSS, and made certain elements interactive via javascript. The key part of the assignment was data retrieval and writing to my database using firebase.

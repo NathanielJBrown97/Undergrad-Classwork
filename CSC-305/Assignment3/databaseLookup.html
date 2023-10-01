@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathanielgram - Database Lookup</title>
+
+    <link rel="stylesheet" href="databaseLookup.css">
+</head>
+<body>
+    <header>
+        <img src="nathanielgramBanner.png" alt = "Banner Image Here">
+    </header>
+
+    <div id="mobileAppEmbed">
+        <h2>Embed Nathanielgram Mobile App</h2>
+        <iframe src="https://thunkable.site/w/GlRuN2nk-gCwkpZqQXpff" frameborder="0" width="600" height="1000"></iframe>
+    </div>
+
+    <div id="enterDetails">
+        <h1>Enter details</h1>
+
+        <h4>ID</h4> 
+        <input id="enterID" type="text"> 
+
+        <h4>Name</h4> 
+        <input id="enterName" type="text"> 
+
+        <h4>Age</h4> 
+        <input id="enterAge" type="number"> <br><br>
+
+        <button id="insert">INSERT</button>
+        <button id="update">UPDATE</button>
+        <button id="remove">REMOVE</button> <br><br>
+    </div>
+
+    <div id="findDetails">
+        <h1>Find by ID</h1>
+        <h4>ID</h4>
+        <input id="findID" type="text"> <br><br>
+        <button id="find">FIND</button>
+        <h3 id="findName" type="text"></h3>
+        <h3 id="findAge" type="number"></h3> <br><br>
+    </div>
+    
+    <div id="findDisplays">
+        <h2>Here is a current user: </h2>
+        <h3 id = "person1ID" type ="text"></h3>
+        <h3 id = "person1Age" type ="text"></h3>
+        <img id = "person1Img" src ="" alt ="Pull Picture and Place here">
+        <h3 id = "person1Hobby" type ="text"></h3>
+        <h3 id = "person1Color" type ="text"></h3>
+        <h3 id = "person1Food" type ="text"></h3>
+
+        <br><br><h2>Here is a another user: </h2>
+        <h3 id = "person2ID" type ="text"></h3>
+        <h3 id = "person2Age" type ="text"></h3>
+        <img id = "person2Img" src ="" alt ="Pull Picture and Place here">
+        <h3 id = "person2Hobby" type ="text"></h3>
+        <h3 id = "person2Color" type ="text"></h3>
+        <h3 id = "person2Food" type ="text"></h3>
+    </div>
+
+
+    
+    <script src="databaseLookup.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+#person1Img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #000;
+}
+
+#person2Img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #000;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+#findDisplays {
+    position: absolute;
+    top: 250px;
+    right: 0;
+    text-align: right;
+    color: #ff6600;
+    margin: 20px;
+}
+
+header img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#mobileAppEmbed {
+    text-align: left;
+    color: #ff6600;
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+}
+
+#mobileAppEmbed h2 {
+    margin-top: -150px;
+}
+
+#mobileAppEmbed iframe {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+}
+
+#enterDetails {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#enterDetails h1 {
+    color: #FF6600;
+}
+
+#enterDetails h4 {
+    color: #FF6600;
+}
+
+#enterDetails input[type="text"],
+#enterDetails input[type="number"] {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #444;
+    color: white;
+}
+
+#enterDetails button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #FF6600;
+    color: white;
+}
+
+#findDetails {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#findDetails h1 {
+    color: #FF6600;
+}
+
+#findDetails h4 {
+    color: #FF6600;
+}
+
+#findDetails input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #444;
+    color: white;
+}
+
+#findDetails button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #FF6600;
+    color: white;
+}
+
+#findName,
+#findAge {
+    color: #FF6600;
+}
+
+button:hover {
+    background-color: #FF4500;
+}

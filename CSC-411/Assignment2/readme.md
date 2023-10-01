@@ -1,0 +1,1 @@
+Repository for Assignment 2 of CSC 411 - In this assignment I must create a custom library for an array structure in Rust. This array will later be used to check a sudoku puzzle in either row-major or col-major iterations.

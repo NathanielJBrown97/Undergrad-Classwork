@@ -1,0 +1,43 @@
+load system io.
+load system math.
+
+structure Circle with
+    data xcoord.
+    data ycoord.
+    data radius.
+
+    function circumference with none do
+-- this@ within a strucutre / class to indicate the radius variable is from THIS structure.
+        return 2.0 * this@radius * math@pi.
+    end
+
+-- ADDED FUNCTION TO CALCULATE AREA (pi * raidus^2)
+    function area with none do
+        return math@pi * (this@radius * this@radius)
+    end
+-- END ADDITION
+end
+
+-- Reads arguments passed to circle structure IN ORDER xcoord > ycoord > radius
+let small = Circle(0,0,1.0).
+
+-- print statement prints the circumference of the object created 'small' specifically calls the member function.
+io@println("This is the small variable we created in class that calculates the circumference of a circle with the x,y of 0,0 and a radius of 1.0. Following the formula of 2.0 * Radius * pi: ").
+io@println(small@circumference())
+
+
+-- >>>ASSIGNMENT 1 Starts Here <<<
+
+-- EXAMPLE 1
+-- area1 circle object at origin with a radius of 1
+let area1 = Circle(0,0,1.0).
+-- print area1 variable
+io@println("This is an example of the area member function in use. It takes pi and multiplies it by the radius of our circle squared. In this example the radius of the circle is 1.0 and the X/Y are 0,0:").
+io@println(area1@area()).
+
+-- EXAMPLE 2
+-- area2 cirle at origin with a radius of 2
+let area2 = Circle(0,0,2.0).
+-- print area 2 variable
+io@println("This is an example of the area member function in use. It takes pi and multiplies it by the radius of our circle squared. In this example the radius of the circle is 2.0 and the X/Y are 0,0:").
+io@println(area2@area()).

@@ -1,41 +1,48 @@
-pub struct array2<T> {
-    height: usize,
-    width: usize,
-    array: Vec<Vec<T>>,
+pub struct Array2<T: Clone> {
+    // Store the width of the array
+    pub width: usize,
+    // Store the height of the array
+    pub height: usize,
+    // Store the actual data as a one-dimensional Vec
+    pub data: Vec<T>,
 }
 
-impl<T> array2<T> {
-    pub fn new(height: usize, width: usize, initial_value: T) -> Self {
-        let data = vec![vec![initial_value; width]; height]; //fill data with a given value
-        array2{
-            height,
+impl<T: Clone> Array2<T> {
+    pub fn new(width: usize, height: usize, initial_value: T) -> Self {
+        // Allocate a new Vec<T> with the desired initial value.
+        let mut data = Vec::new();
+        for _i in 0..width {
+            for _j in 0..height {
+                let this_initial_value = initial_value.clone();
+                data.push(this_initial_value);
+            }
+        }
+
+        // Initialize the Array2<T> struct with the new Vec<T>.
+        Array2 {
             width,
-            array,
+            height,
+            data,
         }
     }
-    // iterate by row major; using reference of self (array2). Returns an iterator of a given type.
-    pub fn iter_row_major(&self) -> RowMajorIterator<T> {
-        //tbd
-    }
-    // iterate by col major; using reference of self (array2). Returns an iterator of a given type.
-    pub fn iter_col_major(&self) -> ColMajorIterator<T> {
-        //tbd
+
+    // Getter Method
+    pub fn get(&self, column: usize, row: usize) -> Option<&T> {
+        self.get_index(column, row).map(|index| &self.data[index])
     }
 
-    // Getter function to find and grab the value at a given row/col.
-    pub fn get(&self, row: usize, col: usize) -> Option<&T>{
-        // if row and col are less height/width
-            //grab data at those coords
-        // otherwise
-            // nothing, its out of bounds.
+    // Mutable Getter Method
+    pub fn get_mut(&mut self, column: usize, row: usize) -> Option<&mut T> {
+        self.get_index(column, row).map(move |index| &mut self.data[index])
     }
-    
-    pub fn set(&mut self, row: usize, col: usize, value: T) --> bool {
-        // if row and col are less than height/width
-            //set coords to value
-            //flip bool for success confirmation
-        // otherwise
-            //flip bool for coords out of bounds.
+
+    // Get index method
+    fn get_index(&self, column: usize, row: usize) -> Option<usize> {
+        if column < self.width && row < self.height {
+            Some(row * self.width + column)
+        } else {
+            None
+        }
     }
 
 }

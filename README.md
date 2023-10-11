@@ -9,10 +9,9 @@ CSC 211: Computer Programming - C++
 
 CSC 212: Data Structures and Abstractions - C++
 
-CSC 301: Fundamentals of Programming Languages - Fall 23'
+CSC 301: Fundamentals of Programming Languages - Aesteroid, ML
 
-CSC 305: Software Engineering - Fall 23'
+CSC 305: Software Engineering - Javascript, CSS, HTML
+CSC 411: Computer Organization - Rust
 
-CSC 411: Computer Organization - Fall 23'
-
-CSC 412: Operating Systems and Networks - Fall 23'
+CSC 412: Operating Systems and Networks - C/C++, Docker Ubuntu WSL, Bash

@@ -1,0 +1,31 @@
+load system io.
+
+function listdel -- Arguments: touple of a list and an integer (list, int) Returns: List ommiting elem at int pos
+    with(somelist:%list, n:%integer) do
+        listdel_helper([] , somelist, n)
+
+end
+
+
+function listdel_helper --Args: (list_sofar, list_remaining, integer)  Returns:
+    with (list_sofar:%list, [], _) do
+        list_sofar
+    with (list_sofar:%list , [h|t],0) do 
+        list_sofar+t
+    with (list_sofar:%list, [h|t], n:%integer) do
+        listdel_helper(list_sofar+[h], t, n-1).
+end 
+
+
+function listdel_bruteforce -- (list, integer) => list (omitting element at integer)
+ -- ex listdel([1,2,3], 1) => [1,3]
+ with (somelist:%list, n:%integer) do 
+ function listdel_helper -- (listsofar, listremaining, integer)
+    with (listsofar:%list, [], _) do listsofar
+    with (listsofar:%list, [h|t], 0) do listsofar+t
+    with (listsofar:%list, [h|t], n:%integer) do
+        listdel_helper(listsofar+[h], t, n-1)
+  end
+ listdel_helper([], somelist, n) 
+end
+assert([1,2,4]==listdel_bruteforce([1,2,3,4], 2)).

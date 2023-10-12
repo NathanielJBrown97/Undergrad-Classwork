@@ -1,0 +1,13 @@
+load system io.
+
+
+-- increment function Args: 1 Value Returns: Value++
+function inc with i do
+    return i + 1.
+end
+
+let foo = inc.
+
+let x = foo(1).
+
+assert (x == 2).

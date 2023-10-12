@@ -1,0 +1,26 @@
+load system io.
+-- function inc_list with input_list do
+--     let output_list = [].
+
+--     for e in input_list do
+--         output_list @append(e+1).
+--     end
+--     return output_list.
+-- end
+
+-- let list = [1,2,3].
+-- let new_list = inc_list(list).
+-- assert(new_list == [2,3,4]).
+
+function inc_list
+    with [] do
+        []
+    with [h | t] do
+        [h+1] + inc_list(t)
+end
+io@print("VIA MULTIDISPATCH: The output of the list [1,2,3] incremented is... " +tostring(inc_list([1,2,3])) + "\n").
+
+function map_inc_list with list do
+    b = list @map( lambda with i do i+1).
+end
+io@print("VIA MAPPING: the output of the list [5,5,6] incremented is... " +tostring(map_inc_list([5,5,6])) + "\n").

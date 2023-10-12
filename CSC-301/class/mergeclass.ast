@@ -1,0 +1,46 @@
+load system io.
+
+function half   -- Args: List  Return: Touple of (List, List)
+    with [] do  -- Condition of No elements... return touple of empty lists.
+        ([],[])
+    with [a] do -- condition of 1 elements... return touple of list with 1 elem and empty list.
+        ( [a] , [] )
+    with [ a | b | t ] do -- with more than 2 elems... send tail recursively to half().
+        let (evens, odds) = half(t).
+        ( [a] + evens , [b] + odds ) -- return a touple of 2 lists adding the evens/odds respectively.
+end 
+assert(([0,2] , [1,3]) == half([0,1,2,3])).
+assert(([0,2] , [1]) == half([0,1,2])).
+
+
+
+function merge -- Args: Touple of two SORTED lists (list, list) Returns: one list
+    with ([],[]) do -- Contion of 2 empty - return empty.
+        [].
+    with(a:%list, []) do -- condition of only first list -- return single list of elems
+        a
+    with([], b:%list) do -- condition of only second list -- return single list of elems
+        b
+    with ([a | ta] , [b | tb]) do --condition 
+        [a] + merge(ta, [b] + tb) if a <= b
+                                  else [b] + merge([a] + ta , tb)
+end
+assert([1,2,3] == merge([2],[1,3])).
+assert([1,2,3] == merge([1,2,3], [])).
+
+function mergesort
+    with [] do
+        [].
+    with [a] do
+        [a].
+    with unsorted:%list do
+        let (evens, odds) = half(unsorted).
+        let sorted_evens = mergesort(evens).
+        let sorted_odds = mergesort(odds).
+        merge(sorted_evens, sorted_odds).
+    with _ do
+        throw Error("Mergesort sorts lists. That wasn't a list.").
+end
+
+assert([1,2,3,4,5] == mergesort([5,4,3,2,1])).
+assert([1,2] == mergesort([2,1])).

@@ -1,0 +1,55 @@
+load system io.
+
+# function called listsum that iterates through a list.
+# Base case is to return 0 if the list is empty.
+# Recursive Case is to take the head of the list and add it to the result of the listsum functoin called with the tail of the list.
+function listsum with thisList do
+    return 0 if thisList == [] else hd(thisList) + listsum(tl(thisList)).
+end
+
+io@println("The sum of [1,2,3] is " + tostring(listsum[1,2,3])).
+
+assert(6==listsum[1,2,3]).
+
+#returns the length of a given list
+function listLength with thisList do
+    return 0 if thisList == [] 
+    else 1 + listLength(tl(thisList)).
+end
+
+io@println("The length of [1,2,3] is " +tostring(listLength[1,2,3])).
+assert(3==listLength[1,2,3]).
+
+
+#doubles each element and returns a sum
+function listDouble with thisList do
+    return 0 if thisList == [] 
+    else hd(thisList) + hd(thisList) + listDouble(tl(thisList)).
+end
+
+io@println("The double of [1,2,3] is " +tostring(listDouble[1,2,3])).
+
+
+#doubles each element in the list, prints the doubled list.
+function listDoubleIndividual with myList do
+    return [] if myList == [] 
+    else [hd(myList)+hd(myList)]+(listDoubleIndividual (tl(myList))).
+end
+
+io@println(listDoubleIndividual([1,2,3])).
+
+
+
+
+
+# HOMEWORK EXAMPLE
+
+function listLength2
+    with [] do
+        0
+    with _ | t do
+        1 + listLength2(t).
+
+end
+
+io@println("The length of [1,2,3,4] is " +tostring(listLength2[1,2,3,4])).

@@ -9,10 +9,6 @@ use std::fs::File;
 use std::io::Read; // io for reading.
 
 
-// This needs major rework --- I'm handling input wrong somehow... Probably something to do with
-// Bitpack needing implementation. Focusing on getting the instructions, memory, and UM, working before
-// last fixes to integrate with a specific expectation of input instructions.
-
 fn main() {
     // Get the UM program file from command line arguments
     let args: Vec<String> = env::args().collect();

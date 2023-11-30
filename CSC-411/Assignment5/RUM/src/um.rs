@@ -1,5 +1,5 @@
-mod memory; // Module to handle Memory initialization and management.
-mod instructions; // Module to handle methods for instruction calls
+use crate::memory;
+use crate::instructions;
 
 const NUM_REGISTERS: usize = 8; // constant maximum number of registers for the UM
 
@@ -34,11 +34,13 @@ impl UniversalMachine {
     pub fn run(&mut self) {
         // Loop through all instructions
         loop {
+        // DEBUG PRINT    println!("Before: program_counter = {}", self.program_counter);
             let instruction = self.fetch_instruction(); // set the instruction to one associate with program counter.
             if !self.execute_instruction(instruction) { // If the instruction can not be executed
                 break; // return false and halt program.
             }
             self.program_counter += 1; //instruction done, increment...
+        // DEBUG PRINT    println!("After: program_counter = {}", self.program_counter);
         } 
     }
 
